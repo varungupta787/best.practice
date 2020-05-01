@@ -3,72 +3,60 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-/*  229. Majority Element II    */
+/*  169. Majority Element    */
 
-/*  https://leetcode.com/problems/majority-element-ii/  */
+/*  https://leetcode.com/problems/majority-element/  */
 
 /*
-* Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+* Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 
-Note: The algorithm should run in linear time and in O(1) space.
+You may assume that the array is non-empty and the majority element always exist in the array.
 
 Example 1:
 
 Input: [3,2,3]
-Output: [3]
+Output: 3
 Example 2:
 
-Input: [1,1,1,3,3,2,2,2]
-Output: [1,2]
+Input: [2,2,1,1,1,2,2]
+Output: 2
 *
 * */
 
 
 public class MajorityElement {
-    public List<Integer> majorityElement(int[] nums) {
-        ArrayList<Integer> result = new ArrayList<>();
+    public int majorityElement(int[] nums) {
+        int result = 0;
         int len = nums.length;
         if (len == 0)
             return result;
 
-        int first = nums[0], count1 = 1, second = first, count2 = 0;
+        int element = nums[0], count = 1;
 
         for (int i = 1; i < len; i++) {
 
-            if (first == nums[i]) {
-                count1++;
-            } else if (second == nums[i]) {
-                count2++;
-            } else if (count1 == 0) {
-                first = nums[i];
-                count1 = 1;
-            } else if (count2 == 0) {
-                second = nums[i];
-                count2 = 1;
+            if (element == nums[i]) {
+                count++;
             } else {
-                count1--;
-                count2--;
+                count--;
+                if (count == 0) {
+                    element = nums[i];
+                    count = 1;
+                }
             }
         }
 
-        count1 = 0;
-        count2 = 0;
+        count = 0;
 
         for (int i = 0; i < len; i++) {
-
-            if (first == nums[i]) {
-                count1++;
-            } else if (second == nums[i]) {
-                count2++;
+            if (element == nums[i]) {
+                count++;
             }
         }
 
-        if (count1 > len / 3)
-            result.add(first);
-
-        if (count2 > len / 3)
-            result.add(second);
-
+        if (count > len / 2)
+            result = element;
+        System.out.println(result);
         return result;
     }
 }
