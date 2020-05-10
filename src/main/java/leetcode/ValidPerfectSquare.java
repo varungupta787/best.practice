@@ -25,21 +25,19 @@ public class ValidPerfectSquare {
 
     public boolean isPerfectSquare(int num) {
 
-        if(num == 1)
-            return true;
-        else {
-            int i = 1;
-            if(num %2 == 0) {
-                i=2;
+        long start = 1;
+        long end = num;
+        while (start<= end) {
+            long mid = (start + end)/2;
+            long midSqr = mid*mid;
+            if(midSqr == num){
+                return true;
+            } else if(midSqr < num) {
+                start = mid+1;
             } else {
-                i=3;
+                end = mid-1;
             }
-            for(;i<=num/2; i+=2) {
-                if((num % (i*i)) == 0) {
-                    return isPerfectSquare(num/(i*i));
-                }
-            }
-            return false;
         }
+        return false;
     }
 }
