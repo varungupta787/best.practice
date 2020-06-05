@@ -39,7 +39,7 @@ public class RandomPickWithWeight {
     public RandomPickWithWeight(int[] w) {
         w_sum = new int[w.length];
         int sum = 0;
-        for(int i = 0; i < w.length; i++){
+        for (int i = 0; i < w.length; i++) {
             sum += w[i];
             w_sum[i] = sum;
         }
@@ -49,15 +49,15 @@ public class RandomPickWithWeight {
         double target = w_sum[w_sum.length - 1] * Math.random();
         int si = 0, ei = w_sum.length - 1;
         int res = -1;
-        while(si <= ei){
+        while (si <= ei) {
             int mid = (si + (ei - si) / 2);
-            if(target < w_sum[mid]){
+            if (target < w_sum[mid]) {
                 res = mid;
                 ei = mid - 1;
-            }
-            else{
+            } else {
                 si = mid + 1;
             }
         }
         return res;
     }
+}
