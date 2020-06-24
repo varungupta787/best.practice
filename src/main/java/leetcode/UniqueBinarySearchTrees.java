@@ -24,9 +24,7 @@ Given n = 3, there are a total of 5 unique BST's:
 * */
 
 public class UniqueBinarySearchTrees {
-    public static void main(String[] args) {
-        System.out.println(new UniqueBinarySearchTrees().numTrees(10));
-    }
+
     public int numTrees(int n) {
 
         int[] data = new int[n+1];
