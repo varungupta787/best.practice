@@ -41,9 +41,6 @@ It's guaranteed that the answer will be less than or equal to 2 * 10 ^ 9.
 
 public class UniquePaths {
 
-    public static void main(String[] args) {
-        System.out.println(new UniquePaths().uniquePaths(7, 3));
-    }
     public int uniquePaths(int m, int n) {
         int[] data = new int[n];
         data[0] = 1;
