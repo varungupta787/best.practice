@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 /*  190. Reverse Bits   */
 
 /*  https://leetcode.com/problems/reverse-bits/ */
