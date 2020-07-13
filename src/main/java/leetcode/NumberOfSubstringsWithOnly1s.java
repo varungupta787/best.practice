@@ -52,7 +52,6 @@ public class NumberOfSubstringsWithOnly1s {
         long out = 0;
         int i=0;
         long count = 0;
-        char ch = '0';
         while(i < len) {
             if(s.charAt(i) == '1'){
                 count++;
@@ -63,7 +62,6 @@ public class NumberOfSubstringsWithOnly1s {
                     out += ((count)*(count+1))/2;
                 }
                 count = 0;
-                ch = s.charAt(i);
             }
             i++;
         }
