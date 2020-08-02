@@ -40,6 +40,15 @@ public class DetectCapital {
 
 /*
 * -------------------------- Regex Helper  ------------------------
+*
+*
+   `|` -> or
+    `.` -> any character
+    `*` -> 0 or more
+    `+` -> 1 or more
+    `?` -> 0 or 1
+
+
 Character classes
 .	any character except newline
 \w\d\s	word, digit, whitespace
