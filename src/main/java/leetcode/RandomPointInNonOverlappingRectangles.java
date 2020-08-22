@@ -42,16 +42,6 @@ The input is two lists: the subroutines called and their arguments. Solution's c
 
 public class RandomPointInNonOverlappingRectangles {
 
-
-    public static void main(String[] args) {
-        RandomPointInNonOverlappingRectangles obj =
-                new RandomPointInNonOverlappingRectangles(new int[][]{
-                {-2, -2, -1, -1},
-                {1, 0, 3, 0},
-        });
-        System.out.println(obj.pick());
-    }
-
     int[][] rects;
     int[] offsets;
     int range;
