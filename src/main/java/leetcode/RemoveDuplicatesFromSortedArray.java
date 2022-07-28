@@ -48,7 +48,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
-        int element = nums[0], index = 0, i=1;
+        int index = 0, i=1;
         while(i<nums.length) {
             if(nums[i] != nums[index]) {
                 if(index+1 != i) {
