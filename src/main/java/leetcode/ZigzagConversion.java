@@ -40,4 +40,28 @@ Output: "A"
 
 
 public class ZigzagConversion {
+    public String convert(String s, int numRows) {
+        int i=0, n=s.length(), index = 0, j=0;
+        String[] sbArr = new String[numRows];
+        for(j=0; j<numRows; j++)   {
+            sbArr[j] = "";
+        }
+        while(i<n) {
+            for(j=0; j<numRows && i<n; j++)   {
+                sbArr[j] = sbArr[j]+(s.charAt(i));
+                i++;
+            }
+
+            for(j=numRows-2; j>0  && i<n; j--)   {
+                sbArr[j] = sbArr[j]+s.charAt(i);
+                i++;
+            }
+        }
+
+        StringBuffer sb = new StringBuffer();
+        for(String data : sbArr)   {
+            sb.append(data);
+        }
+        return sb.toString();
+    }
 }
