@@ -28,4 +28,20 @@ Explanation: There are 4 substrings: "10", "01", "10", "01" that have equal numb
 * */
 
 public class CountBinarySubstrings {
+    public int countBinarySubstrings(String s) {
+        int curr = 1, prev = 0, res = 0;
+        char[] arr = s.toCharArray();
+        for(int i=1; i<s.length(); i++) {
+            if(arr[i-1] == arr[i]) {
+                curr++;
+            } else {
+                prev = curr;
+                curr = 1;
+            }
+            if(prev>= curr) {
+                res++;
+            }
+        }
+        return res;
+    }
 }
